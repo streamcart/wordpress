@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Streamcart 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/streamcart\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-08-06T08:58:35-03:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: \n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: streamcart\n"
+
+#. Plugin Name of the plugin
+#: streamcart.php
+msgid "Streamcart"
+msgstr ""
+
+#. Author of the plugin
+#: streamcart.php
+msgid "CastleIt"
+msgstr ""
+
+#. Author URI of the plugin
+#: streamcart.php
+msgid "https://castleit.io/"
+msgstr ""
+
+#: includes/admin.php:17
+#: includes/admin.php:18
+#: includes/admin.php:54
+msgid "Streamcart Settings"
+msgstr "Configurações do Streamcart"
+
+#: includes/admin.php:37
+msgid "Public Key"
+msgstr "Chave pública"
+
+#: includes/admin.php:30
+msgid "Main Settings"
+msgstr "Configurações Principais"
