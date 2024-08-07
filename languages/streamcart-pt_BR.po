@@ -30,7 +30,7 @@ msgstr ""
 
 #: includes/admin.php:17
 #: includes/admin.php:18
-#: includes/admin.php:54
+#: includes/admin.php:57
 msgid "Streamcart Settings"
 msgstr "Configurações do Streamcart"
 
@@ -41,3 +41,7 @@ msgstr "Chave pública"
 #: includes/admin.php:30
 msgid "Main Settings"
 msgstr "Configurações Principais"
+
+#: includes/admin.php:49
+msgid "Create your account at to generate your integration key on "
+msgstr "Crie sua conta em para gerar sua chave de integração em "
