@@ -46,7 +46,7 @@ if ( ! class_exists( 'Streamcart_Admin' ) ) :
             ?>
             <input type='text' class='regular-text' name='streamcart_public_key' value='<?php echo esc_attr( $option ); ?>'>
             <br>
-            <span><?= __( 'Create your account at to generate your integration key on ', 'streamcart' ) .
+            <span><?= __( 'Create your account to generate your integration key on ', 'streamcart' ) .
                 $this->streamcart_app_link_as_html() ?></span>
             <?php
         }

@@ -43,5 +43,5 @@ msgid "Main Settings"
 msgstr "Configurações Principais"
 
 #: includes/admin.php:49
-msgid "Create your account at to generate your integration key on "
-msgstr "Crie sua conta em para gerar sua chave de integração em "
+msgid "Create your account to generate your integration key on "
+msgstr "Crie sua conta para gerar sua chave de integração em "
