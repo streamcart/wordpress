@@ -73,4 +73,5 @@ if ( ! class_exists( 'Streamcart_Admin' ) ) :
 endif;
 
 new Streamcart_Admin();
+
 ?>
