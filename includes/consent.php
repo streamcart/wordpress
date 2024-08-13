@@ -26,11 +26,18 @@ if ( ! class_exists( 'Streamcart_Consent' ) ) :
 
         public function handle_consent_form()
         {
-            if (isset($_POST['streamcart_user_data_consent'])) {
+            if (isset($_POST['streamcart_user_data_consent']) &&
+                $_POST['streamcart_user_data_consent'] == 'on' &&
+                isset($_POST['streamcart_consent_form_nonce_field']) &&
+                wp_verify_nonce($_POST['streamcart_consent_form_nonce_field'], 'streamcart_consent_form')
+            ) {
                 update_option('streamcart_user_data_consent', $_POST['streamcart_user_data_consent']);
                 wp_redirect( admin_url() );
                 exit();
             }
+
+            wp_redirect( admin_url('/admin.php?page=streamcart-consent') );
+            exit();
         }
 
     }

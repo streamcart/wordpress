@@ -14,34 +14,57 @@ msgstr ""
 "X-Domain: streamcart\n"
 
 #. Plugin Name of the plugin
-#: streamcart.php
 msgid "Streamcart"
 msgstr ""
 
 #. Author of the plugin
-#: streamcart.php
 msgid "CastleIt"
 msgstr ""
 
 #. Author URI of the plugin
-#: streamcart.php
 msgid "https://castleit.io/"
 msgstr ""
 
 #: includes/admin.php:17
 #: includes/admin.php:18
-#: includes/admin.php:57
+#: includes/admin.php:58
 msgid "Streamcart Settings"
 msgstr "Configurações do Streamcart"
 
-#: includes/admin.php:37
+#: includes/admin.php:38
 msgid "Public Key"
 msgstr "Chave pública"
 
-#: includes/admin.php:30
+#: includes/admin.php:31
 msgid "Main Settings"
 msgstr "Configurações Principais"
 
-#: includes/admin.php:49
+#: includes/admin.php:50
 msgid "Create your account to generate your integration key on "
 msgstr "Crie sua conta para gerar sua chave de integração em "
+
+#: includes/consent.php:17
+#: includes/consent.php:18
+msgid "Streamcart Consent"
+msgstr "Consentimento do Streamcart"
+
+#: includes/consent/view.php:17
+#: includes/consent/view.php:20
+msgid "Privacy Policy"
+msgstr "Política de Privacidade"
+
+#: includes/consent/view.php:19
+msgid "To enhance your experience with us, we would like to collect some personal information.<br>We assure you that all data will be handled with confidentiality and security, in accordance with the General Data Protection Law (GDPL).<br>By continuing, you agree to the use of your data as described in our"
+msgstr "Para melhorar a sua experiência conosco, gostaríamos de recolher algumas informações pessoais.<br>Garantimos que todos os dados serão tratados com confidencialidade e segurança, de acordo com a Lei Geral de Proteção de Dados (LGPD).<br>Continuando , você concorda com o uso de seus dados conforme descrito em"
+
+#: includes/consent/view.php:27
+msgid "You should check in order to use the plugin"
+msgstr "Você deve aceitar para usar o plugin"
+
+#: streamcart.php:88
+msgid "You need to accept our terms to use the plugin: "
+msgstr "Você precisa aceitar nossos termos para usar o plugin: "
+
+#: streamcart.php:89
+msgid "HERE"
+msgstr "AQUI"

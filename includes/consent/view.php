@@ -7,13 +7,11 @@ function resolve_privacy_policy_link() {
         return 'https://castleit.notion.site/Streamcart-Privacy-Policy-61a00a8d9f5a450d860b4786c5670b71';
     }
 }
-
 ?>
 <div id="streamcart-consent">
     <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
         <input type="hidden" name="action" value="streamcart_consent_form" />
         <?php wp_nonce_field('streamcart_consent_form', 'streamcart_consent_form_nonce_field'); ?>
-
         <h3><?= __('Privacy Policy', 'streamcart') ?></h3>
         <p>
             <?= __('To enhance your experience with us, we would like to collect some personal information.<br>We assure you that all data will be handled with confidentiality and security, in accordance with the General Data Protection Law (GDPL).<br>By continuing, you agree to the use of your data as described in our', 'streamcart') ?>
