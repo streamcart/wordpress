@@ -23,6 +23,7 @@ if ( ! class_exists( 'Streamcart_Admin' ) ) :
         }
 
         public function settings_init() {
+            register_setting( 'streamcart_user_data_consent', 'streamcart_user_data_consent' );
             register_setting( 'streamcart', 'streamcart_public_key' );
 
             add_settings_section(

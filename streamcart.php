@@ -27,13 +27,6 @@ if ( ! class_exists( 'Streamcart' ) ) :
             $this->init_hooks();
         }
 
-        public static function plugin_activation()
-        {
-            if('not-exists' === get_option('streamcart_user_data_consent', 'not-exists')){
-                register_setting( 'streamcart', 'streamcart_user_data_consent' );
-            }
-        }
-
         public static function instance() {
             if ( is_null( self::$instance ) ) {
                 self::$instance = new self();
@@ -102,7 +95,4 @@ if ( ! class_exists( 'Streamcart' ) ) :
 endif;
 
 Streamcart::instance();
-
-register_activation_hook( __FILE__, ['Streamcart', 'plugin_activation']);
-
 ?>
