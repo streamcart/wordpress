@@ -70,7 +70,7 @@ if ( ! class_exists( 'Streamcart' ) ) :
                 return;
             }
             echo '<div class="notice notice-error is-dismissible"><p>';
-            echo 'Você precisa consentir com os termos pra usar o plugin: <a href="/wp-admin/admin.php?page=streamcart-consent">AQUI</a>';
+            echo $this->consent_terms_notice_text();
             echo '</p></div>';
         }
 
@@ -80,8 +80,13 @@ if ( ! class_exists( 'Streamcart' ) ) :
 
         public function display_as_mu_plugin( $plugin_file ) {
             if ( strpos( $plugin_file, basename(__FILE__) )  ) {
-                echo '<div>Você precisa consentir com os termos pra usar o plugin: <a href="/wp-admin/admin.php?page=streamcart-consent">AQUI</a></div>';
+                echo $this->consent_terms_notice_text();
             }
+        }
+
+        private function consent_terms_notice_text() {
+            return __('You need to accept our terms to use the plugin: ', 'streamcart')
+                . '<a href="/wp-admin/admin.php?page=streamcart-consent">'.__('HERE', 'streamcart').'</a>';
         }
 
         public function add_script() {
