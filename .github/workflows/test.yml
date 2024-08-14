@@ -1,0 +1,64 @@
+name: Test
+on:
+  push:
+    branches:
+      - main
+      - "feature/**"
+    paths:
+      - "**.php"
+      - "composer.json"
+      - "composer.lock"
+      - "phpunit-wp.xml.dist"
+      - "tests/**"
+      - ".github/workflows/test.yml"
+jobs:
+  wp-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          - php_version: "7.2"
+            wp_version: "6.4"
+            multisite: true
+          - php_version: "8.1"
+            wp_version: "6.5"
+            multisite: true
+
+    name: "WP Test: PHP ${{ matrix.php_version }} | WP ${{ matrix.wp_version }}${{ matrix.multisite == true && ' (+ ms)' || '' }}"
+    services:
+      mysql:
+        image: mysql:${{ ( matrix.php_version == '7.2' && '5.6' ) || ( matrix.php_version < '7.4' && '5.7' ) || '8.0' }}
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php_version }}
+          ini-values: zend.assertions=1, error_reporting=-1, display_errors=On
+      - name: "Install Composer dependencies"
+        uses: ramsey/composer-install@v3
+        with:
+          dependency-versions: "highest"
+          composer-options: "yoast/wp-test-utils --with-dependencies --no-scripts"
+          custom-cache-suffix: $(/bin/date -u --date='last Mon' "+%F")
+
+      - name: Install WP
+        shell: bash
+        run: bin/install-wp-tests.sh wordpress_test root '' 127.0.0.1:3306 ${{ matrix.wp_version }}
+
+      - name: Run WP tests - single site
+        run: ./vendor/bin/phpunit -c phpunit-wp.xml.dist
+
+      - name: Run WP tests - multisite
+        if: ${{ matrix.multisite == true && matrix.coverage == false }}
+        run: ./vendor/bin/phpunit -c phpunit-wp.xml.dist
+        env:
+         WP_MULTISITE: 1
