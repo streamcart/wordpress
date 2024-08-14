@@ -11,9 +11,9 @@ if ( getenv( 'WP_PLUGIN_DIR' ) !== false ) {
     define( 'WP_PLUGIN_DIR', getenv( 'WP_PLUGIN_DIR' ) );
 }
 
-//$GLOBALS['wp_tests_options'] = [
-//    'active_plugins' => [ 'streamcart/streamcart.php' ],
-//];
+$GLOBALS['wp_tests_options'] = [
+    'active_plugins' => [ 'streamcart/streamcart.php' ],
+];
 
 require_once dirname( __DIR__ ) . '/../vendor/yoast/wp-test-utils/src/WPIntegration/bootstrap-functions.php';
 
