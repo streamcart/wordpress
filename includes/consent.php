@@ -7,6 +7,8 @@ if ( ! class_exists( 'Streamcart_Consent' ) ) :
 
     class Streamcart_Consent {
 
+        const KEY = 'consent_page';
+
         public function __construct() {
             add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
             add_action( 'admin_post_streamcart_consent_form', array($this, 'handle_consent_form'));
@@ -44,6 +46,5 @@ if ( ! class_exists( 'Streamcart_Consent' ) ) :
 
 endif;
 
-new Streamcart_Consent();
-
+Streamcart::instance()->setObject(\Streamcart_Consent::KEY, new Streamcart_Consent());
 ?>

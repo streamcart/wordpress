@@ -7,6 +7,8 @@ if ( ! class_exists( 'Streamcart_Admin' ) ) :
 
     class Streamcart_Admin {
 
+        const KEY = 'admin_settings_page';
+
         public function __construct() {
             add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
             add_action( 'admin_init', array( $this, 'settings_init' ) );
@@ -73,6 +75,6 @@ if ( ! class_exists( 'Streamcart_Admin' ) ) :
 
 endif;
 
-new Streamcart_Admin();
+Streamcart::instance()->setObject(Streamcart_Admin::KEY, new Streamcart_Admin());
 
 ?>
