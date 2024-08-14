@@ -34,6 +34,12 @@ if ( ! class_exists( 'Streamcart' ) ) :
             return self::$instance;
         }
 
+        public static function dispose() {
+            if(self::$instance !== null) {
+                self::$instance = null;
+            }
+        }
+
         private function includes() {
             include_once dirname( __FILE__ ) . '/includes/admin.php';
 
@@ -47,7 +53,7 @@ if ( ! class_exists( 'Streamcart' ) ) :
 
             if(!$this->is_user_data_consent_checked()) {
                 add_action( 'admin_notices', array( $this, 'add_admin_user_data_consent_notice' ) );
-                add_action( 'after_plugin_row_meta', array( $this, 'display_as_mu_plugin' ), 10, 1 );
+                add_action( 'after_plugin_row_meta', array( $this, 'add_admin_user_data_consent_plugin_row_notice' ), 10, 1 );
             } else {
                 add_action( 'wp_head', array( $this, 'add_script' ) );
             }
@@ -78,7 +84,7 @@ if ( ! class_exists( 'Streamcart' ) ) :
             load_plugin_textdomain( 'streamcart', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
         }
 
-        public function display_as_mu_plugin( $plugin_file ) {
+        public function add_admin_user_data_consent_plugin_row_notice( $plugin_file ) {
             if ( strpos( $plugin_file, basename(__FILE__) )  ) {
                 echo $this->consent_terms_notice_text();
             }
