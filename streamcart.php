@@ -1,18 +1,20 @@
 <?php
 /*
  * Plugin Name: Streamcart
- * Version: 0.1.0
+ * Description: This plugin allow to connect the website with Streamcart. Then you'll be able to easily display your videos and lives to engage your visitors.
+ * Version: 0.1.1
  * Author: CastleIt
  * Author URI: https://castleit.io/
  * Text Domain: streamcart
  * Domain Path: /languages
+ * License: GPL v3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-define('CASTLEIT_STREAMCART_VERSION', '0.1.0');
+define('CASTLEIT_STREAMCART_VERSION', '0.1.1');
 define('CASTLEIT_STREAMCART_PLUGIN_DIR', __DIR__);
 
 if ( ! class_exists( 'Streamcart' ) ) :
@@ -56,7 +58,7 @@ if ( ! class_exists( 'Streamcart' ) ) :
                 return;
             }
             echo '<div class="notice notice-error is-dismissible"><p>';
-            echo $this->consent_terms_notice_text();
+            echo esc_html($this->consent_terms_notice_text());
             echo '</p></div>';
         }
 
@@ -66,7 +68,7 @@ if ( ! class_exists( 'Streamcart' ) ) :
 
         public function add_admin_user_data_consent_plugin_row_notice( $plugin_file ) {
             if ( strpos( $plugin_file, basename(__FILE__) )  ) {
-                echo $this->consent_terms_notice_text();
+                echo esc_html($this->consent_terms_notice_text());
             }
         }
 

@@ -16,8 +16,8 @@ if ( ! class_exists( 'Streamcart_Consent' ) ) :
 
         public function add_admin_menu() {
             add_menu_page(
-                __('Streamcart Consent', 'streamcart'),
-                __('Streamcart Consent', 'streamcart'),
+                esc_html_e('Streamcart Consent', 'streamcart'),
+                esc_html_e('Streamcart Consent', 'streamcart'),
                 'manage_options',
                 'streamcart-consent',
                 function () {

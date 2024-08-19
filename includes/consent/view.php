@@ -12,17 +12,17 @@ function resolve_privacy_policy_link() {
     <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
         <input type="hidden" name="action" value="streamcart_consent_form" />
         <?php wp_nonce_field('streamcart_consent_form', 'streamcart_consent_form_nonce_field'); ?>
-        <h3><?= __('Privacy Policy', 'streamcart') ?></h3>
+        <h3><?php echo esc_html_e('Privacy Policy', 'streamcart') ?></h3>
         <p>
-            <?= __('To enhance your experience with us, we would like to collect some personal information.<br>We assure you that all data will be handled with confidentiality and security, in accordance with the General Data Protection Law (GDPL).<br>By continuing, you agree to the use of your data as described in our', 'streamcart') ?>
-            <a target="_blank" href="<?= resolve_privacy_policy_link() ?>"><?= __('Privacy Policy', 'streamcart') ?></a>
+            <?php echo esc_html_e('To enhance your experience with us, we would like to collect some personal information.<br>We assure you that all data will be handled with confidentiality and security, in accordance with the General Data Protection Law (GDPL).<br>By continuing, you agree to the use of your data as described in our', 'streamcart') ?>
+            <a target="_blank" href="<?php echo esc_html(resolve_privacy_policy_link()) ?>"><?php echo esc_html_e('Privacy Policy', 'streamcart') ?></a>
         </p>
         <table class="form-table">
             <tr>
                 <td>
                     <input type="checkbox" id="streamcart_user_data_consent" name="streamcart_user_data_consent">
                     <label for="streamcart_user_data_consent">
-                        <?= __('You should check in order to use the plugin', 'streamcart') ?>
+                        <?php echo esc_html_e('You should check in order to use the plugin', 'streamcart') ?>
                     </label>
                 </td>
             </tr>
