@@ -3,8 +3,8 @@
  * Plugin Name: Streamcart
  * Description: This plugin allow to connect the website with Streamcart. Then you'll be able to easily display your videos and lives to engage your visitors.
  * Version: 0.1.1
- * Author: CastleIt
- * Author URI: https://castleit.io/
+ * Author: Streamcart
+ * Author URI: https://streamcart.io/
  * Text Domain: streamcart
  * Domain Path: /languages
  * License: GPL v3
